@@ -1,0 +1,20 @@
+doctype html
+html(lang='en')
+  head
+    title Display Result Page for Lab4
+  body
+    h3 Result
+    table(border='1')
+      tr
+        td First Name
+        td Last Name
+        td Email
+        td Languages Known
+        td Days Can Meet
+      each val in displayArray
+        tr
+          td= val.firstName
+          td= val.lastName
+          td= val.email
+          td= val.langKnown
+          td= val.daysToMeet

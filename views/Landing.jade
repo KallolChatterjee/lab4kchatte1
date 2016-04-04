@@ -1,0 +1,111 @@
+doctype html
+html(lang='en')
+  head
+    title Landing Page for Lab4
+  body
+    block content
+    form(
+      method = 'POST'
+      action = 'post_coder'
+      )
+      table
+        tr
+          td First Name
+          td
+            input(
+              type = "text"
+              id= "fName"
+              name= "fName"
+              placeholder = "Enter your First Name"
+            )
+        tr
+          td Last Name
+          td
+            input(
+              type = "text"
+              id= "lName"
+              name= "lName"
+              placeholder = "Enter your Last Name"
+            )
+        tr
+          td Email
+          td
+            input(
+              type="email"
+              name="usremail"
+              placeholder="user@mydomain.com"
+            )
+        tr
+          td Languages known
+          td
+            select(
+              multiple
+              name = "langKnown"
+              )
+              option(
+                value="C"
+              ) C
+              option(
+                value="Java"
+              ) Java
+              option(
+                value="Python"
+              ) Python
+              option(
+                value="Javascript"
+              ) Javascript
+              option(
+                value="Pascal"
+              ) Pascal
+              option(
+                value="Ruby"
+              ) Ruby
+            p Hold down the Ctrl (windows) / Command (Mac) button to	select multiple options.
+        tr
+          td Days of week you can meet
+          td
+            select(
+              multiple
+              name="daysToMeet"
+              )
+              optgroup(
+                label="Weekdays"
+              )
+                option(
+                  value="Monday"
+                ) Monday
+                option(
+                  value="Tuesday"
+                ) Tuesday
+                option(
+                  value="Wednesday"
+                ) Wednesday
+                option(
+                  value="Thursday"
+                ) Thursday
+                option(
+                  value="Friday"
+                ) Friday
+              optgroup(
+                label="Weekend"
+              )
+                option(
+                  value="Saturday"
+                ) Saturday
+                option(
+                  value="Sunday"
+                ) Sunday
+            p Hold down the Ctrl (windows) / Command (Mac) button to	select multiple options.
+        tr
+          td(
+            align="right"
+          )
+            input(
+              type = "submit"
+              value="Submit"
+            )
+          td
+            input(
+              type = "reset"
+              value="Clear"
+            )
