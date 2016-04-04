@@ -86,6 +86,16 @@ function getByFirstName(fName, res){
   app.locals.displayArray = filteredList;
   res.render('CodersDisplay');
 }
+function getByLastName(lName, res){
+  var filteredList = personArray.filter(function (person) {
+    return (
+      person.lastName.includes(lName)
+    )
+  });
+  app.locals.displayArray = filteredList;
+  res.render('CodersDisplay');
+}
+
 app.get('/', function (req, res) {
   res.render('Landing');
 });
@@ -132,6 +142,15 @@ app.get('/get_coder/firstname/:name', function (req, res) {
   var response = 'Get User: ' + req.param('name');
   getByFirstName(req.param('name'), res);
   res.send();
+});
+app.get('/get_coder/lastname/:lname', function (req, res) {
+  var response = 'Get User with lastname: ' + req.param('lname');
+  getByLastName(req.param('lname'), res);
+  res.send();
+});
+app.param('lname', function(req, res, next, value){
+  console.log("\nRequest received with userid: " + value);
+  next();
 });
 app.param('name', function(req, res, next, value){
   console.log("\nRequest received with userid: " + value);
