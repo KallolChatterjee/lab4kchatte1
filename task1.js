@@ -189,6 +189,8 @@ http.createServer(function (req, res){
         endRequest(res);
       }
     }else if(req.url.toString().startsWith('/coders')){
+res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        res.setHeader("Pragma", "no-cache");
       var browser = req.headers['user-agent'];
       console.log("browser "+ browser);
       if(browser.toString().includes('Chrome')){

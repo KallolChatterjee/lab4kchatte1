@@ -125,6 +125,8 @@ app.get(/^\/coders?$/, function(req, res){
     app.locals.bodyColor = '#FFC0CB';
     //res.render('CodersDisplay');
   }
+res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+  res.setHeader("Pragma", "no-cache");
   var urlDetails = url.parse(req.url, true, false);
   var queryStr = urlDetails.query;
   if(queryStr.fName === undefined && queryStr.lName === undefined
